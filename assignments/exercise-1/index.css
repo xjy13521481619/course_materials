@@ -1,0 +1,330 @@
+/* ==========================================================================
+   1. 基础全局样式
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #0b0f19; /* 深邃星空蓝背景 */
+    color: #f3f4f6;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* 统一的区块样式 */
+.section {
+    padding: 100px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ==========================================================================
+   2. 顶部导航栏 (Navbar)
+   ========================================================================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: rgba(11, 15, 25, 0.8);
+    backdrop-filter: blur(12px); /* 磨砂玻璃效果 */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #6366f1; /* 炫酷科技紫 */
+}
+
+.nav-links a {
+    color: #9ca3af;
+    margin: 0 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.nav-links a:hover {
+    color: #fff;
+}
+
+.nav-cta {
+    background-color: #6366f1;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.nav-cta:hover {
+    background-color: #4f46e5;
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+}
+
+/* ==========================================================================
+   3. Hero 主视觉区 (Hero Section)
+   ========================================================================== */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    /* 使用 CSS 渐变色模拟极具科幻感的深空星云效果，免去加载大图慢的烦恼 */
+    background: radial-gradient(circle at 80% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(168, 85, 247, 0.1) 0%, transparent 50%),
+                #0b0f19;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    letter-spacing: -2px;
+    background: linear-gradient(to right, #ffffff, #c7d2fe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    color: #9ca3af;
+    margin-bottom: 40px;
+}
+
+.cta-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    color: white;
+    padding: 16px 36px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px rgba(99, 102, 241, 0.5);
+}
+
+/* ==========================================================================
+   4. 网格布局与卡片通用样式 (Grid & Cards)
+   ========================================================================== */
+.grid-container {
+    display: grid;
+    gap: 30px;
+}
+
+/* 三列网格 */
+.triple-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* 两列网格 */
+.double-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* 目的地卡片样式 */
+.card {
+    background-color: #111827;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    overflow: hidden;
+    padding: 24px;
+}
+
+.card-image {
+    height: 200px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+/* 使用 CSS 渐变色为卡片制作赛博朋克风插图 */
+.bg-mars { background: linear-gradient(135deg, #f43f5e, #fb923c); }
+.bg-saturn { background: linear-gradient(135deg, #eab308, #6366f1); }
+.bg-nebula { background: linear-gradient(135deg, #a855f7, #06b6d4); }
+
+.card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #9ca3af;
+    font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   5. 用户评价样式 (Testimonials)
+   ========================================================================== */
+.testimonial-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+    border: 1px solid rgba(255,255,255,0.05);
+    padding: 40px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.testimonial-card .quote {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #e5e7eb;
+    margin-bottom: 24px;
+}
+
+.testimonial-card .author {
+    color: #6366f1;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   6. 价格方案样式 (Pricing)
+   ========================================================================== */
+.pricing-card {
+    background-color: #111827;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    position: relative;
+}
+
+/* 推荐方案高亮 */
+.pricing-card.featured {
+    border-color: #6366f1;
+    background: radial-gradient(circle at top right, rgba(99, 102, 241, 0.1), transparent), #111827;
+    transform: scale(1.05); /* 视觉放大突显 */
+}
+
+.badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #6366f1;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.pricing-card h4 {
+    font-size: 1.25rem;
+    color: #9ca3af;
+    margin-bottom: 20px;
+}
+
+.pricing-card .price {
+    font-size: 3rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.pricing-card .price span {
+    font-size: 1rem;
+    color: #616e7f;
+    font-weight: 400;
+}
+
+.pricing-card ul {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.pricing-card ul li {
+    margin-bottom: 16px;
+    font-size: 0.95rem;
+    color: #9ca3af;
+}
+
+.pricing-card ul li::before {
+    content: "✓";
+    color: #6366f1;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.price-btn {
+    display: block;
+    background-color: #1f2937;
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.featured .price-btn {
+    background-color: #6366f1;
+}
+
+.featured .price-btn:hover {
+    background-color: #4f46e5;
+}
+
+/* ==========================================================================
+   7. 底部样式 (Footer)
+   ========================================================================== */
+.footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 40px 20px;
+    background-color: #080b13;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+.footer-links a {
+    color: #6b7280;
+    margin-left: 24px;
+}
+
+.footer-links a:hover {
+    color: #9ca3af;
+}
